@@ -195,12 +195,12 @@
                                                     <p style="color: red; font-weight: bold">${{ product.with_discount }}</p>
                                                 {% endif %}
                                             </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( {{ product.reyting }} Reviews )</span>
-                                            </div><!-- End .rating-container -->
+{#                                            <div class="ratings-container">#}
+{#                                                <div class="ratings">#}
+{#                                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->#}
+{#                                                </div><!-- End .ratings -->#}
+{#                                                <span class="ratings-text">( {{ product.reyting }} Reviews )</span>#}
+{#                                            </div><!-- End .rating-container -->#}
                                         </div><!-- End .product-body -->
 
                                     </div><!-- End .product -->
@@ -346,7 +346,7 @@
                                                 <span class="product-label label-circle label-top">Top</span>
                                                 <span class="product-label label-circle label-sale">Sale</span>
                                                 <a href="product.html">
-                                                    <img src="assets/images/demos/demo-3/products/product-5.jpg" alt="Product image" class="product-image">
+                                                    <img src="{% static  'assets/images/demos/demo-3/products/product-5.jpg'%}" alt="Product image" class="product-image">
                                                 </a>
 
                                                 <div class="product-action-vertical">
@@ -383,7 +383,7 @@
                                             <figure class="product-media">
                                                 <span class="product-label label-circle label-sale">Sale</span>
                                                 <a href="product.html">
-                                                    <img src="assets/images/demos/demo-3/products/product-6.jpg" alt="Product image" class="product-image">
+                                                    <img src="{% static  'assets/images/demos/demo-3/products/product-6.jpg'%}" alt="Product image" class="product-image">
                                                 </a>
 
                                                 <div class="product-action-vertical">
@@ -451,27 +451,27 @@
                             }
                         }'>
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/1.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/1.png'%}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/2.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/2.png'%}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/3.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/3.png'%}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/4.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/4.png'%}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/5.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/5.png'%}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/6.png" alt="Brand Name">
+                            <img src="{% static  'assets/images/brands/6.png'%}" alt="Brand Name">
                         </a>
                     </div><!-- End .owl-carousel -->
             </div><!-- End .container -->
@@ -514,7 +514,7 @@
                     <div class="col-xl-5col d-none d-xl-block">
                         <div class="banner">
                             <a href="#">
-                                <img src="assets/images/demos/demo-3/banners/banner-4.jpg" alt="banner">
+                                <img src="{% static  'assets/images/demos/demo-3/banners/banner-4.jpg'%}" alt="banner">
                             </a>
                         </div><!-- End .banner -->
                     </div><!-- End .col-xl-5col -->
@@ -547,7 +547,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-7.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-7.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -586,7 +586,7 @@
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-8.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-8.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -620,7 +620,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-9.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-9.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -661,7 +661,7 @@
                                             <span class="product-label label-circle label-top">Top</span>
                                             <span class="product-label label-circle label-sale">Sale</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-10.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-10.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -696,7 +696,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-15.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-15.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -730,7 +730,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-11.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-11.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -787,7 +787,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-13.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-13.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -826,7 +826,7 @@
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-12.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-12.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -861,7 +861,7 @@
                                             <span class="product-label label-circle label-top">Top</span>
                                             <span class="product-label label-circle label-sale">Sale</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-14.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-14.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -902,7 +902,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-15.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-15.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -936,7 +936,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-11.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-11.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -993,7 +993,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-15.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-15.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1027,7 +1027,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-11.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-11.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1061,7 +1061,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-13.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-13.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1100,7 +1100,7 @@
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-12.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-12.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1135,7 +1135,7 @@
                                             <span class="product-label label-circle label-top">Top</span>
                                             <span class="product-label label-circle label-sale">Sale</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-14.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-14.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1199,7 +1199,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-11.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-11.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1232,7 +1232,7 @@
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-12.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-12.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1266,7 +1266,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-13.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-13.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1306,7 +1306,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-15.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-15.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -1340,7 +1340,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
                                             <a href="product.html">
-                                                <img src="assets/images/demos/demo-3/products/product-11.jpg" alt="Product image" class="product-image">
+                                                <img src="{% static  'assets/images/demos/demo-3/products/product-11.jpg'%}" alt="Product image" class="product-image">
                                             </a>
 
                                             <div class="product-action-vertical">

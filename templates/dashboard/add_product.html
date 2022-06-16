@@ -51,10 +51,11 @@
                     </div>
                     <select style="margin-bottom: 15px" class="form-select" aria-label="Default select example">
                       <option selected>Product color</option>
-                        {% for j in products.first.colors.all %}
+                        {% for j in products.first.color.all %}
                             <option value="{{ j.id }}">{{ j.name }}</option>
                         {% endfor %}
-                    </select>
+                    </select>.
+
 
                     <select style="margin-bottom: 15px" class="form-select" aria-label="Default select example">
                       <option selected>Size</option>
@@ -97,6 +98,8 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Color</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Quantity</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Delete</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Edit</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -117,7 +120,7 @@
                         <p class="text-sm font-weight-bold mb-0">$ {{ i.with_discount }}</p>
                       </td>
                       <td>
-                        <p class="text-sm font-weight-bold mb-0">{{ i.color.first.name }}</p>
+                        <p class="text-sm font-weight-bold mb-0">{{ i.colors.first.name }}</p>
                       </td>
                       <td>
                         <span class="text-xs font-weight-bold">{{ i.category.name }}</span>
@@ -132,12 +135,44 @@
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle">
-                        <button class="btn btn-link text-secondary mb-0">
-                          <i class="fa fa-ellipsis-v text-xs"></i>
-                        </button>
+                      <td class="align-middle text-center text-sm">
+                        <span onclick="delete_product({{ i.id }})" style="cursor: pointer" class="badge badge-sm bg-gradient-success">Delete</span>
                       </td>
+                      <td class="align-middle">
+                        <a style="cursor: pointer" class="text-secondary font-weight-bold text-xs" data-toggle="modal" data-target="#editModal{{ i.id }}" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    <td></td>
                     </tr>
+                      <tr id="delete_product{{ i.id }}" >
+                    </tr>
+                      <div class="modal fade" id="editModal{{ i.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="">Edit category</h5>
+                              </div>
+                              <form action="{% url 'edit_product' i.id %}" method="post" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <input value="{{ i.imageURL }}" name="image" type="file" class="form-control" required>
+                                    </div>
+                                  <div class="input-group mb-3">
+                                      <div class="custom-file">
+                                        <input value="{{ i.name }}" name="name" type="text" class="form-control" aria-label="Text input with segmented dropdown button" required>
+                                      </div>
+                                    </div>
+                                </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                  </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
                   {% endfor %}
                   </tbody>
                 </table>

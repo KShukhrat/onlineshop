@@ -17,9 +17,11 @@ from store.models import Category,Product
 def dashboard(request):
     return render(request,'dashboard/dashboard.html')
 
+@adminonly
 def virtual_reality(request):
     return render(request,'dashboard/virtual-reality.html')
 
+@adminonly
 def profile(request):
     return render(request,'dashboard/profile.html')
 
@@ -29,6 +31,7 @@ def sign_in(request):
 def sign_up(request):
     return render(request,'dashboard/sign-up.html')
 
+@adminonly
 def billing(request):
     return render(request,'dashboard/billing.html')
 
@@ -47,6 +50,33 @@ def add_product(request):
     products = Product.objects.all().order_by('-id')
     categories = Category.objects.all().order_by('id')
     return render(request, 'dashboard/add_product.html',{'products':products,'categories':categories,'size':[i[0] for i in products.first().choice][1:]})
+
+@adminonly
+def edit_product(request,id):
+    if request.method=='POST':
+        name = request.POST['name']
+        price = request.POST['price']
+        image = request.FILES['image']
+        description = request.POST['description']
+        quantity = request.POST['quantity']
+        discount = request.POST['discount']
+        product = Product.objects.get(id=id)
+        product.name = name
+        product.price = price
+        product.image = image
+        product.description = description
+        product.quantity = quantity
+        product.discount = discount
+        product.save()
+        return redirect('add_product')
+
+def delete_product(request):
+    data = json.loads(request.body)
+    id = data['id']
+    product = Product.objects.get(id=int(id))
+    product.delete()
+    return JsonResponse({'status': 'ok'})
+
 
 @adminonly
 def add_category(request):
