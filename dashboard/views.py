@@ -1,4 +1,5 @@
 import json
+from pyexpat import model
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
@@ -16,10 +17,33 @@ from store.models import Category,Product
 def dashboard(request):
     return render(request,'dashboard/dashboard.html')
 
+def virtual_reality(request):
+    return render(request,'dashboard/virtual-reality.html')
+
+def profile(request):
+    return render(request,'dashboard/profile.html')
+
+def sign_in(request):
+    return render(request,'dashboard/sign-in.html')
+
+def sign_up(request):
+    return render(request,'dashboard/sign-up.html')
+
+def billing(request):
+    return render(request,'dashboard/billing.html')
+
 @adminonly
 def add_product(request):
+    f = Product()
     if request.method=='POST':
-        pass
+        name = request.POST['name']
+        price = request.POST['price']
+        image = request.FILES['image']
+        description = request.POST['description']
+        quantity = request.POST['quantity']
+        discount = request.POST['discount']
+        Category.objects.create(name=name,price=price, image=image, description=description,quantity=quantity,discount=discount)
+        return redirect('add_product')
     products = Product.objects.all().order_by('-id')
     categories = Category.objects.all().order_by('id')
     return render(request, 'dashboard/add_product.html',{'products':products,'categories':categories,'size':[i[0] for i in products.first().choice][1:]})

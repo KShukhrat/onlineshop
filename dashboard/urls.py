@@ -7,6 +7,13 @@ urlpatterns = [
     path('delete_category/', delete_category, name='delete_category'),
     path('edit_category/<int:id>/', edit_category, name='edit_category'),
     path('add_product/', add_product, name='add_product'),
+    path('billing/', billing, name='billing'),
+    path('users/', users, name='users'),
+    path('virtual-reality/', virtual_reality, name='virtual-reality'),
+    path('profile/', profile, name='profile'),
+    path('sign-in/', sign_in, name='sign-in'),
+    path('sign-up/', sign_up, name='sign-up'),
+
 
     #Users
     path('users/', users, name='users'),
