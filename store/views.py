@@ -129,3 +129,6 @@ def about(request):
 def blog(request):
     return render(request, 'blog-grid-3cols.html')
 
+def music(request):
+    return render(request, 'music.html')
+

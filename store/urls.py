@@ -5,6 +5,7 @@ urlpatterns = [
     path('',index,name='index'),
     path('product_by/',product_by,name='product_by'),
     path('product_info/<int:id>/',product_info,name='product_info'),
+    path('music/',music,name='music'),
 
     #Card
     path('cart/',cart,name='cart'),

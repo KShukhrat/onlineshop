@@ -11,7 +11,7 @@ from user.models import CustomUser
 from django.contrib import messages
 
 from dashboard.forms import Add_category
-from store.models import Category,Product
+from store.models import Category, Product
 
 @adminonly
 def dashboard(request):
@@ -45,7 +45,7 @@ def add_product(request):
         description = request.POST['description']
         quantity = request.POST['quantity']
         discount = request.POST['discount']
-        Category.objects.create(name=name,price=price, image=image, description=description,quantity=quantity,discount=discount)
+        Category.objects.create(name=name, price=price, image=image, description=description, quantity=quantity, discount=discount)
         return redirect('add_product')
     products = Product.objects.all().order_by('-id')
     categories = Category.objects.all().order_by('id')
@@ -53,7 +53,7 @@ def add_product(request):
 
 @adminonly
 def edit_product(request,id):
-    if request.method=='POST':
+    if request.method == 'POST':
         name = request.POST['name']
         price = request.POST['price']
         image = request.FILES['image']
@@ -80,7 +80,7 @@ def delete_product(request):
 
 @adminonly
 def add_category(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         name = request.POST['name']
         image = request.FILES['image']
         Category.objects.create(name=name, image=image)
@@ -88,7 +88,7 @@ def add_category(request):
     categories = Category.objects.all().order_by('-id')
     return render(request, 'dashboard/add_category.html',{'categories':categories})
 
-def delete_category(request):
+def delete_category(request,id):
     data = json.loads(request.body)
     id = data['id']
     category = Category.objects.get(id=int(id))
@@ -97,25 +97,25 @@ def delete_category(request):
 
 @adminonly
 def edit_category(request,id):
-    if request.method=='POST':
+    if request.method == 'POST':
         name = request.POST['name']
         image = request.FILES['image']
         category = Category.objects.get(id=id)
         category.name = name
-        category.image  = image
+        category.image = image
         category.save()
         return redirect('add_category')
 
 @adminonly
 def users(request):
-    if request.method=="POST":
+    if request.method == "POST":
         firstname = request.POST['firstname']
         lastname = request.POST['lastname']
         phone = request.POST['phone']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
         if password2==password1:
-            CustomUser.objects.create_user(username=phone,password=password1,phone_number = phone,first_name=firstname,last_name=lastname,is_verify=True)
+            CustomUser.objects.create_user(username=phone, password=password1, phone_number=phone, first_name=firstname, last_name=lastname, is_verify=True)
             messages.success(request,'Yangi user yaratildi')
         else:
             messages.error(request,'Kiritilgan parol mos kelmadi')

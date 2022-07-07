@@ -3,7 +3,7 @@ from user.models import CustomUser as User
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='Category',null=True, blank=True)
+    image = models.ImageField(upload_to='Category', null=True, blank=True)
 
     @property
     def imageURL(self):
@@ -11,6 +11,10 @@ class Category(models.Model):
             return self.image.url
         except:
             pass
+
+
+
+
 
     def __str__(self):
         return self.name
@@ -24,11 +28,11 @@ class Color(models.Model):
 
 class Product(models.Model):
     choice = (
-        ('Select a size','Select a size'),
-        ('Small','Small'),
-        ('Medium','Medium'),
-        ('Large','Large'),
-        ('Extra large','Extra large'),
+        ('Select a size', 'Select a size'),
+        ('Small', 'Small'),
+        ('Medium', 'Medium'),
+        ('Large', 'Large'),
+        ('Extra large', 'Extra large'),
     )
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=100)
