@@ -6,14 +6,14 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'index'%}">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Pages</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Contact us</li>
                     </ol>
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
             <div class="container">
-	        	<div class="page-header page-header-big text-center" style="background-image: url('assets/images/contact-header-bg.jpg')">
+	        	<div class="page-header page-header-big text-center" style="background-image: url('{% static "assets/images/contact-header-bg.jpg"%}')">
         			<h1 class="page-title text-white">Contact us<span class="text-white">keep in touch with us</span></h1>
 	        	</div><!-- End .page-header -->
             </div><!-- End .container -->
@@ -115,7 +115,7 @@
 	                				<div class="row">
 	                					<div class="col-sm-5 col-xl-6">
 	                						<figure class="store-media mb-2 mb-lg-0">
-	                							<img src="assets/images/stores/img-1.jpg" alt="image">
+	                							<img src="{% static "assets/images/stores/img-1.jpg" %}" alt="image">
 	                						</figure><!-- End .store-media -->
 	                					</div><!-- End .col-xl-6 -->
 	                					<div class="col-sm-7 col-xl-6">
@@ -140,7 +140,7 @@
 	                				<div class="row">
 	                					<div class="col-sm-5 col-xl-6">
 	                						<figure class="store-media mb-2 mb-lg-0">
-	                							<img src="assets/images/stores/img-2.jpg" alt="image">
+	                							<img src="{% static "assets/images/stores/img-2.jpg" %}" alt="image">
 	                						</figure><!-- End .store-media -->
 	                					</div><!-- End .col-xl-6 -->
 
@@ -164,7 +164,6 @@
 	                	</div><!-- End .row -->
                 	</div><!-- End .stores -->
                 </div><!-- End .container -->
-            	<div id="map"></div><!-- End #map -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 

@@ -132,3 +132,6 @@ def blog(request):
 def music(request):
     return render(request, 'music.html')
 
+def faq(request):
+    return render(request, 'faq.html')
+

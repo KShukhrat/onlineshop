@@ -63,7 +63,7 @@
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
-                        <a><i class="icon-phone"></i>Call: +998 91 225 58 65</a>
+                        <a><i class="icon-phone"></i>Call: +998 99 457 71 50</a>
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
@@ -74,9 +74,9 @@
                                 <ul>
                                     {% if request.user.is_authenticated %}
                                         {% if request.user.is_superuser %}
-                                            <li><b style="color: white; cursor: pointer"><a style="cursor: pointer" href="{% url 'dashboard' %}">{{ request.user.username }}</a></b><a href="{% url 'log_out' %}">Log out</a></li>
+                                            <li><b style="color: white; cursor: pointer"><a style="cursor: pointer" href="{% url 'dashboard' %}">{{ request.user.username }} |</a></b><a href="{% url 'log_out' %}"> Log out</a></li>
                                         {% else %}
-                                            <li><b style="color: white">{{ request.user.username }}</b> <a href="{% url 'log_out' %}">Log out</a></li>
+                                            <li><b style="color: white">{{ request.user.username }} |</b> <a href="{% url 'log_out' %}"> Log out</a></li>
                                         {% endif %}
                                     {% else %}
                                         <li><a href="{% url 'log_in' %}">Sign in</a> | <a href="{% url 'register' %}">Sign up</a></li>
@@ -263,11 +263,11 @@
 	            				<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
 	            				<ul class="widget-list">
-	            					<li><a href="about.html">About Molla</a></li>
+	            					<li><a href="{% url  "about"%}">About Molla</a></li>
                                     <li><a href="#">Our Services</a></li>
 	            					<li><a href="#">How to shop on Molla</a></li>
-	            					<li><a href="faq.html">FAQ</a></li>
-	            					<li><a href="contact.html">Contact us</a></li>
+	            					<li><a href="{% url 'faq'%}">FAQ</a></li>
+	            					<li><a href="{% url 'contact'%}">Contact us</a></li>
 	            				</ul><!-- End .widget-list -->
 	            			</div><!-- End .widget -->
 	            		</div><!-- End .col-sm-6 col-lg-3 -->
@@ -292,8 +292,8 @@
 	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
 	            				<ul class="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
+	            					<li><a href="{% url 'register' %}">Sign In</a></li>
+	            					<li><a href="{% url 'cart' %}">View Cart</a></li>
 	            					<li><a href="#">My Wishlist</a></li>
 	            					<li><a href="#">Track My Order</a></li>
 	            					<li><a href="#">Help</a></li>
@@ -335,7 +335,7 @@
                     <nav class="mobile-nav">
                         <ul class="mobile-menu">
                             <li class="active">
-                                <a href="index.html">Home</a>
+                                <a href="{% url  'index'%}">Home</a>
                             </li>
                             <li>
                                 <a>Pages</a>
