@@ -106,7 +106,7 @@ class Cart_products(models.Model):
         return f"{self.card.user.username} | {self.product.name} | {self.total}"
 
 class Wishlist(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ManyToManyField(Product)
 
 

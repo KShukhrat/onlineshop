@@ -107,8 +107,11 @@ def delete_wishlist(request):
 
 @login_required(login_url="log_in")
 def wishlist(request):
-    wishlist = Wishlist.objects.get(user=request.user)
-    return render(request, 'wishlist.html',context={'wishlist':wishlist})
+    try:
+        wishlist = Wishlist.objects.get(user=request.user)
+    except:
+        wishlist = Wishlist.objects.create(user=request.user)
+    return render(request, 'wishlist.html', context={'wishlist': wishlist})
 
 @login_required(login_url="log_in")
 def checkout(request):
