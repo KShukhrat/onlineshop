@@ -32,7 +32,7 @@ function delete_user(id){
         })
         .then((response)=>{
         response.json().then((data) => {
-            if(data['status']=='ok'){
+            if(data['status'] == 'ok' ){
                 document.getElementById('delete_user'+id).style.display = 'none'
             }
             else {

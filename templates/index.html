@@ -315,14 +315,14 @@
 
                     <div class="row">
                         <div class="col-lg-6 deal-col">
-                            <div class="deal" style="background-image: url('assets/images/demos/demo-3/deal/bg-1.jpg');">
+                            <div class="deal" style="background-image: url('{% static "assets/images/demos/demo-3/deal/bg-1.jpg" %}');">
                                 <div class="deal-top">
                                     <h2>Deal of the Day.</h2>
                                     <h4>Limited quantities. </h4>
                                 </div><!-- End .deal-top -->
 
                                 <div class="deal-content">
-                                    <h3 class="product-title"><a href="product.html">Home Smart Speaker with  Google Assistant</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="">Home Smart Speaker with  Google Assistant</a></h3><!-- End .product-title -->
 
                                     <div class="product-price">
                                         <span class="new-price">$129.00</span>
@@ -491,21 +491,11 @@
                             <li class="nav-item">
                                 <a class="nav-link active" id="trending-all-link" data-toggle="tab" href="#trending-all-tab" role="tab" aria-controls="trending-all-tab" aria-selected="true">All</a>
                             </li>
+                            {% for cat in categories %}
                             <li class="nav-item">
-                                <a class="nav-link" id="trending-tv-link" data-toggle="tab" href="#trending-tv-tab" role="tab" aria-controls="trending-tv-tab" aria-selected="false">TV</a>
+                                <a class="nav-link" id="trending-tv-link" data-toggle="tab" href="#trending-tv-tab" role="tab" aria-controls="trending-tv-tab" aria-selected="false">{{ cat.name }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="trending-computers-link" data-toggle="tab" href="#trending-computers-tab" role="tab" aria-controls="trending-computers-tab" aria-selected="false">Computers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="trending-phones-link" data-toggle="tab" href="#trending-phones-tab" role="tab" aria-controls="trending-phones-tab" aria-selected="false">Tablets & Cell Phones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="trending-watches-link" data-toggle="tab" href="#trending-watches-tab" role="tab" aria-controls="trending-watches-tab" aria-selected="false">Smartwatches</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="trending-acc-link" data-toggle="tab" href="#trending-acc-tab" role="tab" aria-controls="trending-acc-tab" aria-selected="false">Accessories</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                    </div><!-- End .heading-right -->
                 </div><!-- End .heading -->

@@ -70,7 +70,7 @@ def change_quantity(request):
     id = json.loads(request.body)['id']
     action = json.loads(request.body)['action']
     card_quantity = Cart_products.objects.get(card__user=request.user,product_id=id)
-    if action=='add':
+    if action == 'add':
         card_quantity.add
     elif action=='sub' and card_quantity.quantity>1:
         card_quantity.sub
@@ -138,3 +138,7 @@ def music(request):
 def faq(request):
     return render(request, 'faq.html')
 
+def testing(request):
+    products = Product.objects.all()
+    categories = Category.objects.all()
+    return render(request, 'testing.html', context={'products': products, 'categories': categories})
