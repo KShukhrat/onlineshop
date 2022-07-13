@@ -4,10 +4,10 @@ from .views import *
 urlpatterns = [
     path('', dashboard, name='dashboard'),
     path('add_category/', add_category, name='add_category'),
-    path('delete_category/', delete_category, name='delete_category'),
+    path('delete_category/<int:id>', delete_category, name='delete_category'),
     path('edit_category/<int:id>/', edit_category, name='edit_category'),
     path('add_product/', add_product, name='add_product'),
-    path('delete_product/', delete_product, name='delete_product'),
+    path('delete_product/<int:id>', delete_product, name='delete_product'),
     path('edit_product/<int:id>/', edit_product, name='edit_product'),
     path('billing/', billing, name='billing'),
     path('users/', users, name='users'),

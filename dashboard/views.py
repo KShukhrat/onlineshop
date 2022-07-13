@@ -90,10 +90,11 @@ def add_category(request):
 
 def delete_category(request,id):
     data = json.loads(request.body)
+    print(id)
     id = data['id']
     category = Category.objects.get(id=int(id))
     category.delete()
-    return JsonResponse({'status':'ok'})
+    return JsonResponse({'status': 'ok'})
 
 @adminonly
 def edit_category(request,id):
